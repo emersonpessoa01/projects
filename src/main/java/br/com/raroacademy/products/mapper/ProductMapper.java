@@ -4,7 +4,7 @@ import br.com.raroacademy.products.domain.dto.ProductDTO;
 import br.com.raroacademy.products.domain.entity.Product;
 
 public class ProductMapper {
-
+//Faz o mapeamento entre ProductDTO e Product
     public static Product toEntity(ProductDTO dto) {
         return new Product(
                 dto.id(),
@@ -13,7 +13,7 @@ public class ProductMapper {
                 dto.status()
         );
     }
-
+// Faz o mapeamento entre Product e ProductDTO
     public static ProductDTO toDTO(Product entity) {
         return new ProductDTO(
                 entity.getId(),

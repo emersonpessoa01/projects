@@ -18,8 +18,8 @@ public class Product {
     @Id // Serve para identificar o campo como chave primária
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     // É utilizado para gerar o valor da chave primária automaticamente
+    @Column
     private Long id;
-
     @Column
     private String name;
     @Column

@@ -18,7 +18,7 @@ public class FilterConfig implements Filter {
         filterChain.doFilter(servletRequest, servletResponse);
 
         long finalTime = System.currentTimeMillis() - startTime;
-        System.out.println("Tempo de requisição: " + finalTime + " milisegundos");
+        System.out.println("Tempo de requisição: " + finalTime + " milissegundos");
     }
 
     @Override

@@ -24,4 +24,8 @@ public class ProductService {
         productRepository.save(productEntity);
 
     }
+
+    public ProductRepository getProduct() {
+        return productRepository;
+    }
 }

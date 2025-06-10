@@ -1,7 +1,9 @@
 package br.com.raroacademy.products.domain.entity;
 
+import br.com.raroacademy.products.domain.dto.ProductDTO;
 import jakarta.persistence.*;
 import lombok.*;
+
 import java.math.BigDecimal;
 
 
@@ -10,14 +12,28 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Builder
 @Entity
 @Table(name = "products")
 public class Product {
     @Id // Serve para identificar o campo como chave primária
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // É utilizado para gerar o valor da chave primária automaticamente
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    // É utilizado para gerar o valor da chave primária automaticamente
     private Long id;
+
+    @Column
     private String name;
+    @Column
     private BigDecimal price;
+    @Column
     private Boolean status;
+
+    public static Product toProduct(ProductDTO dto) {
+        return new Product(
+                dto.id(),
+                dto.name(),
+                dto.price(),
+                dto.status() == null || dto.status()
+        );
+    }
+
 }
